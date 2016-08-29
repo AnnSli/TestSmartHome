@@ -51,11 +51,9 @@ var view = {
 		},
 		getVideoBtnNewId: function() {
 			return document.querySelectorAll('[data-number]');
-
 		},
-
-		getVideoTag: function() {
-
+		getRemoveCameraFormBlock: function() {
+			return document.querySelector('.remove-camera-form-block-btn');
 		},
 		getAddNewCameraBtn: function() {
 			return document.getElementById('new-camera');
@@ -157,7 +155,8 @@ var view = {
 			return document.getElementById('unlocked');
 		},
 		changeUnlockSvgColor: function() {
-			document.querySelector('#unlocked svg g g path').setAttribute('fill', '#87C540');
+			document.querySelectorAll('#unlocked svg g g path')[0].setAttribute('fill', '#87C540');
+			document.querySelectorAll('#unlocked svg g g path')[1].setAttribute('fill', '#87C540');
 		},
 		getLockBtn: function() {
 			return document.getElementById('lock');
@@ -196,7 +195,7 @@ var view = {
 			console.log('click');
 			var self = controller.view.password;
 			self.getPasswordBlock().classList.add('tab-content');
-			self.getSetPasswordBlock().classList.remove('tab-content');
+			self.getSetPasswordBlock().classList.remove('hide');
 		},
 		generateUniqueNumbers: function() {
 			for (var a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], i = a.length; i--; ) {
@@ -248,5 +247,7 @@ var view = {
 		removeDisabled: function(element) {
 			element.removeAttribute('disabled');
 		}
+
+
 	}
 }

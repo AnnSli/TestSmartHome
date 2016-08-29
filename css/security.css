@@ -87,7 +87,7 @@ header, footer, article, section, hgroup, nav, figure { display: block; }
 	/* margin: 0 auto; */
 	padding: 15%;
 	text-align: center;
-	background: rgba(0,0,0,.6);
+	background: rgba(0,0,0,.7);
 }
 .camera-object,
 .garage-object {
@@ -113,21 +113,7 @@ header, footer, article, section, hgroup, nav, figure { display: block; }
 .camera-block video {
 	width: 100%;
 }
-#video-btn {
-/* 	list-style: none;
-margin: 10px;
-padding: 0;
-width: 45%;
-float: left; */
-}
-#video-btn li {
-	//float: left;
-	width: 90%;
-	border: 1px solid #008BDE;
-	margin: 5px;
-	height: 30px;
-	border-radius: 10px;
-}
+
 .camera-block button{
 	border: 1px solid #008BDE;
 	text-decoration: none;
@@ -374,6 +360,9 @@ object:active {
 	box-shadow: none;
 }
 
+.hide {
+	display: none!important;
+}
 .tab-content {
 	display: none;
 }
@@ -394,18 +383,22 @@ object:active {
 	font-size: 26px;
 	padding: 100px 0 0 0;
 	margin: 0;
+	position: relative;
 }
 .wrong-password,
 .camera-form {
 	width: 40%;
 	height: 100px;
 	color: #fff;
-	margin: 5% auto;
+	margin: 20% auto;
 	font-size: 26px;
 	line-height: 30px;
 	text-transform: uppercase;
 	/* padding: 20% 0; */
 	text-align: center;
+}
+.camera-form {
+	margin: 5% auto;
 }
 .camera-form input {
 	margin: 10px auto;
@@ -424,4 +417,15 @@ object:active {
     font-size: 14px;
    	top: 10px;
     right: -30px;
+}
+.remove-camera-form-block-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 30px;
+    height: 30px;
+    font-size: 26px;
+    background: none;
+    color: #0099FF;
+    border: none;
 }

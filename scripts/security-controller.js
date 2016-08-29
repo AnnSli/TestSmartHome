@@ -34,6 +34,9 @@ var controller = {
 	addCameraHandler: function() {
 		this.view.camera.getAddNewCameraBtn().onclick = this.view.camera.showCameraFormBlock;
 	},
+	removeCameraHandler: function() {
+		this.view.camera.getRemoveCameraFormBlock().onclick = this.view.camera.hideCameraFormBlock;
+	},
 	fillInCameraModel: function() {
 		var newCamera = new controller.NewCameraConstructor(controller.view.camera.getCameraNameValue(), controller.view.camera.getCameraPathValue());
 		controller.model.camera.push(newCamera);
@@ -133,7 +136,7 @@ var controller = {
 			this.model.password.currentPassword = this.view.password.getCurrentInputValue();
 			this.model.password.passwordStatus = true;
 			this.view.password.resetFunc();
-			this.view.password.getSetPasswordBlock().classList.add('tab-content');
+			this.view.password.getSetPasswordBlock().classList.add('hide');
 			this.view.password.getPasswordBlock().classList.remove('tab-content');
 			this.view.password.changeUnlockSvgColor();
 			//this.changePasswordBlockHandler();
@@ -151,7 +154,6 @@ var controller = {
 	},
 
 	changePasswordBlockHandler: function() {
-
 		controller.view.password.getChangePasswordBtn().addEventListener('click', function() {
 			controller.view.password.showChangePasswordBlock();
 			controller.model.password.passwordStatus = false;
@@ -171,6 +173,8 @@ var controller = {
 				self.view.password.addDisabled(controller.view.garage.getGarageBtn());
 				self.view.password.addDisabled(controller.view.password.getSetPasswordBtn());
 				self.view.password.toggleVisibility(controller.view.password.getUnlockedIcon(),controller.view.password.getLockedIcon());
+				console.log(controller.view.password.getChangePasswordBtn());
+				self.view.password.getChangePasswordBtn().classList.add('hide');
 			} else if (self.view.password.getCurrentInputValue() === self.model.password.currentPassword
 				&& self.view.password.getLockBtn().getAttribute('value') === 'Unlock') {
 				self.view.password.resetFunc();
@@ -178,6 +182,8 @@ var controller = {
 				self.view.password.removeDisabled(controller.view.garage.getGarageBtn());
 				self.view.password.removeDisabled(controller.view.password.getSetPasswordBtn());
 				self.view.password.toggleVisibility(controller.view.password.getLockedIcon(),controller.view.password.getUnlockedIcon());
+
+				self.view.password.getChangePasswordBtn().classList.remove('hide');
 			}
 				else {
 				self.view.password.showWrongPasswordBlock();

@@ -115,12 +115,13 @@
         <div class="camera-form-block">
             <h3>Enter camera data</h3>
             <form action="" class="camera-form">
-                <input type="text" placeholder="name" required id="camera-name" value="">
-                <input type="text" value="../img/def.mp4" placeholder="enter camera path" required id="camera-path"  >
+                <input type="text" placeholder="name" required="required" id="camera-name">
+                <input type="text" value="../img/def.mp4" placeholder="enter camera path" id="camera-path" required="required">
                 <input type="submit" value = "OK" id="camera-submit">
             </form>
+            <button class = "remove-camera-form-block-btn"> &#10006;</button>
         </div>
-        <div class="camera-block tab-content" id="tab2" >
+        <div class="camera-block tab-content" id="tab2">
             <div class="video-container">
             <div class="screen">
                 <video autoplay loop muted controls>
@@ -131,7 +132,7 @@
              <button class="remove-video-btn">
                 &#10006;
             </button>
-            <button id="btnCamera1" class="video-btn">
+            <button class="video-btn">
                 &#9632;
             </button>
             </div>

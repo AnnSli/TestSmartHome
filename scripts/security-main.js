@@ -10,6 +10,7 @@ window.onload = function () {
   controller.hideCameraHandler();
   controller.hideShowVideoTagHandler();
   controller.setVideoBtnIdHandler();
+  controller.removeCameraHandler();
 
   controller.generateUniqueNumbers();
   controller.inputPassHandler();
@@ -19,6 +20,8 @@ window.onload = function () {
   controller.exitWrongPasswordHandler();
   controller.resetLastValueHandler();
   controller.changePasswordBlockHandler();
+
+
 
 
    var showPassBlock = function() {
@@ -31,7 +34,7 @@ window.onload = function () {
 
 for (var i = 0; i < tabLinks.length; i++) {
   tabLinks[i].onclick = function() {
-    document.querySelector('.set-password-block').classList.add('tab-content');
+    document.querySelector('.password-block').classList.add('tab-content');
     var target = this.getAttribute('data-tabholder').replace('#', '');
 
     var sections = document.querySelectorAll('.tab-content');
@@ -39,11 +42,15 @@ for (var i = 0; i < tabLinks.length; i++) {
     for(var j=0; j < sections.length; j++) {
       sections[j].style.display = 'none';
     }
+
     document.getElementById(target).style.display = 'block';
+
     for(var k=0; k < tabLinks.length; k++) {
       tabLinks[k].removeAttribute('class');
     }
+
     this.setAttribute('class', 'is-active');
+
     return false;
   }
 }
